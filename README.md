@@ -55,49 +55,27 @@ The AWS Inactivity Monitoring Tool continuously checks the specified EC2 instanc
 
 The tool provides real-time logs and notifications when taking actions on your AWS resources.
 
-## Running the Tool as a Daemon (Linux/macOS)
+## Running the Tool
 
-To run the AWS Inactivity Monitoring Tool in the background as a daemon:
-
-1. Ensure you have installed the `python-daemon` library:
-
-   ```
-   pip install python-daemon
-   ```
-
-2. Uncomment the line `with daemon.DaemonContext():` in `main.py`:
-
-   ```python
-   # Uncomment the line below if running on Windows or using python-daemon
-   # with daemon.DaemonContext():
-   main()
-   ```
-
-3. Save the changes in `main.py`.
-
-4. Open a terminal, navigate to the project directory, and run the following command:
-
-   ```
-   python main.py
-   ```
-
-   The tool will now run as a background daemon, continuously monitoring the specified EC2 instances and S3 buckets for inactivity.
-
-5. You can close the terminal without stopping the tool. The tool will keep running in the background.
-
-## Running the Tool in a Separate Terminal
-
-To run the AWS Inactivity Monitoring Tool in a separate terminal:
+To run the AWS Inactivity Monitoring Tool:
 
 1. Open a terminal, navigate to the project directory, and ensure you are in the same virtual environment (optional but recommended).
 
-2. Start the tool by running the following command:
+2. Start the tool for EC2 instances by running the following command:
 
    ```
-   python main.py
+   python main.py ec2
    ```
 
-   The tool will start monitoring the specified EC2 instances and S3 buckets for inactivity.
+   OR
+
+   Start the tool for S3 buckets by running the following command:
+
+   ```
+   python main.py s3
+   ```
+
+   The tool will start monitoring the specified resource (EC2 instances or S3 buckets) for inactivity.
 
 3. Leave the terminal open with the tool running while you work on your AWS tasks. The tool will keep running in the foreground, continuously monitoring your AWS resources for inactivity.
 
