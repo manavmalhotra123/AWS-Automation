@@ -1,0 +1,6 @@
+{
+    "ec2_instances": ["i-1234567890abcdef0- instance id", "i-abcdef1234567890"],
+    "s3_buckets": ["bucket-1", "bucket-2"],
+    "inactivity_threshold_minutes": 10
+}
+
